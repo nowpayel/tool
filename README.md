@@ -60,25 +60,3 @@ This application is powered by the following open-source projects and official b
 
 ---
 
-## 📁 Directory Structure
-
-Ensure your directory structure matches the layout below so all binaries load properly (especially to keep 32-bit Heimdall DLLs isolated from 64-bit ADB/Scrcpy binaries):
-
-```text
-NeoShy-Remote-Tool/
-├── NeoShy_Remote_Tool.py      # Main application source code
-├── logo.png                   # Application icon
-├── bin/                       # Main binaries (64-bit)
-│   ├── adb.exe
-│   ├── AdbWinApi.dll
-│   ├── AdbWinUsbApi.dll
-│   ├── fastboot.exe
-│   ├── scrcpy.exe
-│   ├── scrcpy-server
-│   ├── *.dll                  # Scrcpy dependencies (SDL2, FFmpeg, etc.)
-│   └── heimdall/              # Isolated subfolder for Heimdall (32-bit)
-│       ├── heimdall.exe
-│       └── *.dll              # Bundled Heimdall DLLs (libusb, etc.)
-└── usb_driver/                # Windows drivers & fix scripts
-    ├── android_winusb.inf
-    └── *.bat / *.reg          # Optional driver fix scripts
